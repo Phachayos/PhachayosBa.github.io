@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  padding-top: 200px; /* ป้องกัน header ทับเนื้อหา */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(140deg, #000, #444);
+  color: white;
+  padding: 2rem 3rem;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;   /* กึ่งกลางแนวนอน */
+  align-items: center;       /* กึ่งกลางแนวตั้ง */
+  gap: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #ffd700;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+}
+
+nav a {
+  margin-right: 1.5rem;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.icon-container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon-container .icon {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-2.5rem);
+  transition: transform 0.3s ease;
+}
+
+.icon-container img {
+  width: 150%;
+  height: auto;
+}
+
+.icon-container .icon:hover {
+  transform: translateX(-2.5rem) scale(1.2);
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.skills, .projects, .contact {
+  margin-bottom: 1rem;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.skills li {
+  background-color: #1e1e1e;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.03);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  color: #888;
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

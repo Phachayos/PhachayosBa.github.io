@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hide Header on Scroll</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    header.hide {
+      transform: translateY(-100%);
+    }
+
+    main {
+      margin-top: 70px;
+      padding: 1rem;
+      height: 2000px; /* just for scroll */
+      background: linear-gradient(#eee, #ccc);
+    }
+  </style>
+</head>
+<body>
+
+  <header id="mainHeader">
+    นี่คือ Header ของฉัน
+  </header>
+
+  <main>
+    <p>เนื้อหาทดลองให้เลื่อนลง...</p>
+  </main>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('mainHeader');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        // เลื่อนลง -> ซ่อน header
+        header.classList.add('hide');
+      } else {
+        // เลื่อนขึ้น -> แสดง header
+        header.classList.remove('hide');
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+
+</body>
+</html>
